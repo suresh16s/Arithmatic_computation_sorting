@@ -1,4 +1,4 @@
-#!/bin/bash -x 
+#!/bin/bash 
 read -p "Enter the 1st number:" a
 read -p "Enter the 2nd number:" b
 read -p "Enter the 3rd number:" c
@@ -26,6 +26,28 @@ echo "The dictionary is :" ${add[*]}
 
 for i in {1..4}
 do
-	array[$i]=${add[ans_$i]}
+        arr[$i]=${add[ans_$i]}
 done
-echo "Array elements are:"${array[*]}
+echo "Array elements are:"${arr[*]}
+
+
+
+echo "Array in original order"
+echo ${arr[*]}
+
+
+for ((i = 0; i<5; i++))
+do
+    for((j = 0; j<5-i-1; j++))
+    do
+        if [ ${arr[j]} -lt ${arr[$((j+1))]} ]
+        then
+            temp=${arr[j]}
+            arr[$j]=${arr[$((j+1))]}
+            arr[$((j+1))]=$temp 
+        fi
+    done
+done
+echo "Array in sorted in Descending order :"
+echo ${arr[*]}
+
