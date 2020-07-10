@@ -1,2 +1,4 @@
-#!/bin/bash
-echo "Welcome to Arithmatic computing and sortong program:"
+#!/bin/bash -x
+read -p "Enter the 1st number:" a
+read -p "Enter the 2nd number:" b
+read -p "Enter the 3rd number:" c
