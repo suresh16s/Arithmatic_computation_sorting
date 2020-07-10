@@ -23,3 +23,9 @@ add[ans_4]=$ans_4
 
 echo "The dictionary is :" ${add[*]}
 
+
+for i in {1..4}
+do
+	array[$i]=${add[ans_$i]}
+done
+echo "Array elements are:"${array[*]}
